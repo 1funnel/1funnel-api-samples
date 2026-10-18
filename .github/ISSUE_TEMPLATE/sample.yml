@@ -1,0 +1,16 @@
+name: New sample or language
+description: Propose a task or language example
+body:
+  - type: input
+    id: language
+    attributes:
+      label: Language and runtime
+    validations:
+      required: true
+  - type: textarea
+    id: task
+    attributes:
+      label: Developer task and expected result
+      description: Link the relevant public API operation and describe how an offline test could verify it.
+    validations:
+      required: true

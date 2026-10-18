@@ -1,0 +1,19 @@
+name: Sample bug
+description: Report a reproducible problem in a sample
+body:
+  - type: markdown
+    attributes:
+      value: Do not post credentials, signing secrets, OTP codes or personal data. Use SECURITY.md for vulnerabilities.
+  - type: input
+    id: sample
+    attributes:
+      label: Sample path and runtime version
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce and expected/actual behavior
+      description: Include a sanitized error and offline reproduction when possible.
+    validations:
+      required: true

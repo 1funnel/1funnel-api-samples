@@ -1,0 +1,11 @@
+.env
+.env.*
+!.env.example
+*.sqlite*
+__pycache__/
+*.pyc
+*.class
+node_modules/
+.DS_Store
+request.json
+keys.json
