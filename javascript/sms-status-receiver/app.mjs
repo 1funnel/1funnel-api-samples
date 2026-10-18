@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: Apache-2.0
 import { createHmac, randomUUID, timingSafeEqual } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { createServer } from "node:http";

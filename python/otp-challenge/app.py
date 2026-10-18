@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: Apache-2.0
 """A terminal OTP exercise; no browser sessions or login tokens are issued."""
 
 import argparse

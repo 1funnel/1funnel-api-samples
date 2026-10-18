@@ -64,3 +64,7 @@ rather than publishing empty language scaffolds.
 Use issues for reproducible sample bugs and feature requests. For API access or
 account questions, use [1Funnel Support](https://developers.1-funnel.org/resources/support).
 Report security vulnerabilities privately using [SECURITY.md](SECURITY.md).
+
+## License
+
+Licensed under the [Apache License, Version 2.0](LICENSE). See [NOTICE](NOTICE).
