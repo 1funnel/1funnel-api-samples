@@ -1,0 +1,9 @@
+{
+  "business_id": "018f3c4e-7b2a-7c3d-8e9f-0123456789ab",
+  "business_name": "Example Business",
+  "currency": "NGN",
+  "current_balance": "15000.00",
+  "available_balance": "15000.00",
+  "reserved_balance": "0.00",
+  "as_of": "2026-10-13T09:00:00Z"
+}

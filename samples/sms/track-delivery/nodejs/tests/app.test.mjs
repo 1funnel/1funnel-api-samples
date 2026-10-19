@@ -6,7 +6,7 @@ import { createServer } from "node:http";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import test from "node:test";
-import { createApp, openStore } from "./app.mjs";
+import { createApp, openStore } from "../src/app.mjs";
 
 const businessId = "018f3c4e-7b2a-7c3d-8e9f-0123456789ab";
 const messageId = "018f3c4e-7b2a-7c3d-8e9f-aaaaaaaaaaaa";

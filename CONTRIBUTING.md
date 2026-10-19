@@ -5,7 +5,8 @@ can go directly to a pull request. Please keep one task per pull request.
 
 ## Layout
 
-Use `<language>/<task>/`, such as `python/otp-challenge/`. Each task owns its
+Use `samples/<api-area>/<task>/<language>/`, such as
+`samples/otp/create-and-verify/python/`. Follow [the structure conventions](docs/structure.md). Each language sample owns its
 runtime requirements, implementation, README and offline tests. Root tooling
 must not force users to install every language just to run one example.
 
@@ -38,3 +39,9 @@ explicit operator intent; never make it a default test step.
 
 Maintainers review behavior against the published contract. Please include what
 changed, the test command/results and any limitations in the PR description.
+
+Register every sample in `samples/catalog.json`. Include `src/`, `tests/` and
+a placeholder `.env.example`. Classify it as a request or application, keep
+root task/language navigation current, and run the catalog/planner tests. A new
+runtime job must feed the stable `samples-ci` gate; do not add a new required
+branch-check name. Shared fixtures must remain synthetic test data.

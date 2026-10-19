@@ -7,7 +7,7 @@ credentials and `wallet.balance.read`, run from this directory:
 export BUSINESS_ID='<issued-business-id>'
 export ACCESS_TOKEN='<issued-access-token>'
 export API_BASE_URL=https://api.sandbox.1-funnel.org
-bash request.sh
+bash src/request.sh
 ```
 
 The response includes HTTP headers and the JSON body. HTTP 200 returns a balance
@@ -25,7 +25,13 @@ Do not paste credentials or account response data into public issues.
 With Python 3.11+ installed:
 
 ```bash
-python3 test_request.py
+python3 tests/test_request.py
 ```
 
 Tests use a loopback HTTP fixture. No live API request is made.
+
+## Configuration
+
+See `.env.example` for the required environment variables. The sample reads
+exported variables; it does not automatically load `.env` files. Keep real
+credentials and local databases outside source control.

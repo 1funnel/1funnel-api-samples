@@ -10,7 +10,7 @@ or a complete browser login system.
 From this directory:
 
 ```bash
-python3 -m unittest -v test_app.py
+python3 -m unittest discover -s tests -v
 ```
 
 Tests use a local HTTP stub and temporary SQLite database. They send no SMS.
@@ -52,10 +52,10 @@ not an SMS `template_id`. Alternatively remove `template_key` and use inline
 Do not provide both selectors. See the linked tutorial for an inline example.
 
 ```bash
-python3 app.py create login-1001 user-42 request.json
-python3 app.py inspect login-1001 user-42
-python3 app.py verify login-1001 user-42
-python3 app.py status login-1001 user-42
+python3 src/app.py create login-1001 user-42 request.json
+python3 src/app.py inspect login-1001 user-42
+python3 src/app.py verify login-1001 user-42
+python3 src/app.py status login-1001 user-42
 ```
 
 `verify` prompts without echoing the entered code. Use the code delivered to the
@@ -109,3 +109,9 @@ controls, and add secure session issuance with its own transactional/recovery
 design. A successful OTP check is not sufficient by itself to implement login,
 account recovery or a financial authorization flow. Keep the API's expiry and
 attempt policy authoritative; do not invent a fixed TTL or unlimited retries.
+
+## Configuration
+
+See `.env.example` for the required environment variables. The sample reads
+exported variables; it does not automatically load `.env` files. Keep real
+credentials and local databases outside source control.
