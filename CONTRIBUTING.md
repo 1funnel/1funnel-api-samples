@@ -63,6 +63,8 @@ branch-check name. Shared fixtures must remain synthetic test data.
 
 Maintainers may request changes before accepting contributions. Accepted samples
 and tutorial drafts do not automatically publish in the portal; maintainers
-prepare a reviewed portal PR and link its publication back to the contribution.
+prepare a reviewed portal change and post its status and resulting public page
+URL back to the contribution. External contributors do not need private portal
+repository access to follow progress.
 Contributions use Apache-2.0; attribution can be requested in the PR.
 Keep discussion respectful and focused on developer needs and reproducible facts.

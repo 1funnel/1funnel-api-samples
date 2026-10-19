@@ -59,8 +59,9 @@ Maintainers review the proposal/PR for contract correctness, reproducibility,
 clarity, failure handling and sensitive-data exposure. Revisions may be required.
 Acceptance does not promise a release date or automatically publish the draft in
 the portal. Maintainers prepare a separate portal change for approved material,
-arrange review and link the publication PR or resulting page back to the public
-contribution. Keep code paths and portal instructions synchronized.
+arrange review and post publication status on the public contribution, including
+the public page URL once available. Contributors must not need access to an
+internal publication PR to follow progress. Keep code paths and portal instructions synchronized.
 
 Contributions use Apache-2.0. Request attribution in the PR if desired; avoid
 private contact details in the draft. The portal and repository are maintained
