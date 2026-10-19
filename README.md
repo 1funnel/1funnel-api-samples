@@ -1,6 +1,6 @@
-# 1Funnel API samples
+# OneFunnel API samples
 
-Runnable examples for the [1Funnel API](https://developers.1-funnel.org), organized
+Runnable examples for the [OneFunnel API](https://developers.1-funnel.org), organized
 by **API area → developer task → language**. These use ordinary HTTP clients,
 not official SDKs. See [structure and maintenance](docs/structure.md) for the
 layout, sample types and CI conventions.
@@ -68,7 +68,17 @@ secrets, OTP codes, recipient data or local databases.
 See [CONTRIBUTING.md](CONTRIBUTING.md) for new tasks and languages, and
 [SECURITY.md](SECURITY.md) for private vulnerability reporting. Use issues for
 reproducible sample bugs or proposals. For API access and account questions,
-contact [1Funnel Support](https://developers.1-funnel.org/resources/support).
+contact [OneFunnel Support](https://developers.1-funnel.org/resources/support).
+
+## Improve the examples and documentation
+
+Use the [issue chooser](https://github.com/1funnel/1funnel-api-samples/issues/new/choose)
+for sample bugs, documentation corrections, new languages/tutorials or feature
+suggestions. Small sample fixes can be direct pull requests.
+[Author a full tutorial](docs/tutorial-authoring.md) with runnable code, tests
+and a Markdown walkthrough; maintainers handle reviewed portal publication.
+Use portal Support for private account issues and SECURITY.md for confidential
+vulnerability reports.
 
 ## License
 

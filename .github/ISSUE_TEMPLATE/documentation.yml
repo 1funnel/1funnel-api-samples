@@ -1,0 +1,23 @@
+name: Documentation correction
+description: Report unclear, missing or incorrect portal or sample instructions
+body:
+  - type: markdown
+    attributes:
+      value: Do not include credentials, OTP codes, personal data or private account diagnostics. Use SECURITY.md for vulnerabilities and portal Support for account issues.
+  - type: input
+    id: page
+    attributes:
+      label: Portal URL or sample README path
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is unclear or incorrect?
+    validations:
+      required: true
+  - type: textarea
+    id: replacement
+    attributes:
+      label: Suggested correction and verification
+      description: Include proposed wording or sanitized reproduction steps. Maintainers apply accepted portal-only changes in the private docs source.

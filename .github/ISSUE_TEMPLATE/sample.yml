@@ -1,6 +1,16 @@
-name: New sample or language
-description: Propose a task or language example
+name: New sample, language or tutorial
+description: Propose a runnable sample, additional language or full application tutorial
 body:
+  - type: dropdown
+    id: contribution
+    attributes:
+      label: Contribution type
+      options:
+        - New sample
+        - Additional language
+        - Full application tutorial
+    validations:
+      required: true
   - type: input
     id: language
     attributes:
@@ -14,3 +24,8 @@ body:
       description: Link the relevant public API operation and describe how an offline test could verify it.
     validations:
       required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Audience, prerequisites and validation plan
+      description: For tutorials, outline the full path from setup to a saved outcome and recovery. See docs/tutorial-authoring.md.
