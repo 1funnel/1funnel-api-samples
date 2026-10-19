@@ -15,7 +15,7 @@ class JavaTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.temp = tempfile.TemporaryDirectory()
-        subprocess.run(["javac", "--release", "17", "-d", cls.temp.name, str(Path(__file__).with_name("WalletBalance.java"))], check=True)
+        subprocess.run(["javac", "--release", "17", "-d", cls.temp.name, str(Path(__file__).resolve().parents[1] / "src" / "WalletBalance.java")], check=True)
 
     @classmethod
     def tearDownClass(cls):
@@ -35,7 +35,7 @@ class JavaTest(unittest.TestCase):
                 self.send_response(case.status)
                 self.send_header("Content-Type", "application/json")
                 self.end_headers()
-                body = {"business_id": BUSINESS, "business_name": "Example Business", "currency": "NGN", "current_balance": "15000.00", "available_balance": "15000.00", "reserved_balance": "0.00", "as_of": "2026-10-13T09:00:00Z"} if case.status == 200 else {"code": "balance_unavailable"}
+                body = json.loads((Path(__file__).resolve().parents[5] / "fixtures/wallet/balance.json").read_text()) if case.status == 200 else {"code": "balance_unavailable"}
                 self.wfile.write(json.dumps(body).encode())
 
         self.server = ThreadingHTTPServer(("127.0.0.1", 0), Handler)

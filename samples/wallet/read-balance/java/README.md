@@ -12,7 +12,7 @@ From this directory, with approved Sandbox credentials and `wallet.balance.read`
 export BUSINESS_ID='<issued-business-id>'
 export ACCESS_TOKEN='<issued-access-token>'
 export API_BASE_URL=https://api.sandbox.1-funnel.org
-java WalletBalance.java
+java src/WalletBalance.java
 ```
 
 The client requires HTTP 200 and prints the balance snapshot as JSON. Monetary
@@ -26,10 +26,16 @@ balances. Error bodies and tokens are not printed. HTTP redirects are not follow
 With a JDK and Python 3.11+ installed:
 
 ```bash
-python3 test_client.py
+python3 tests/test_client.py
 ```
 
 The Python harness compiles the Java client in a temporary directory and runs it
 against a loopback HTTP fixture. Tests check the authorization/path, HTTP 200
 handling, HTTP 503 failure without a fabricated balance, and rejection of an
 insecure non-loopback origin. No live API requests are made.
+
+## Configuration
+
+See `.env.example` for the required environment variables. The sample reads
+exported variables; it does not automatically load `.env` files. Keep real
+credentials and local databases outside source control.

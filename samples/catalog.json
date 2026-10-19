@@ -1,0 +1,52 @@
+[
+  {
+    "id": "sms-track-delivery-nodejs",
+    "area": "sms",
+    "task": "track-delivery",
+    "language": "nodejs",
+    "kind": "application",
+    "path": "samples/sms/track-delivery/nodejs",
+    "runtime": "Node.js 24",
+    "test": ["node", "--test", "tests/app.test.mjs"]
+  },
+  {
+    "id": "otp-create-and-verify-python",
+    "area": "otp",
+    "task": "create-and-verify",
+    "language": "python",
+    "kind": "application",
+    "path": "samples/otp/create-and-verify/python",
+    "runtime": "Python 3.11+",
+    "test": [
+      "python3",
+      "-W",
+      "error::ResourceWarning",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ]
+  },
+  {
+    "id": "wallet-read-balance-java",
+    "area": "wallet",
+    "task": "read-balance",
+    "language": "java",
+    "kind": "request",
+    "path": "samples/wallet/read-balance/java",
+    "runtime": "JDK 17+; Python 3.11+ for offline tests",
+    "test": ["python3", "tests/test_client.py"]
+  },
+  {
+    "id": "wallet-read-balance-curl",
+    "area": "wallet",
+    "task": "read-balance",
+    "language": "curl",
+    "kind": "request",
+    "path": "samples/wallet/read-balance/curl",
+    "runtime": "Bash and cURL 7.76+; Python 3.11+ for offline tests",
+    "test": ["python3", "tests/test_request.py"]
+  }
+]

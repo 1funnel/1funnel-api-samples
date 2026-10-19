@@ -8,6 +8,9 @@ import unittest
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+
 from app import Api, ApiError, Application, open_store
 
 BUSINESS = "018f3c4e-7b2a-7c3d-8e9f-0123456789ab"

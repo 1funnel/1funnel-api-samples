@@ -25,7 +25,7 @@ class CurlTest(unittest.TestCase):
                 self.send_response(case.status)
                 self.send_header("Content-Type", "application/json")
                 self.end_headers()
-                self.wfile.write(json.dumps({"available_balance": "15000.00"} if case.status == 200 else {"code": "balance_unavailable"}).encode())
+                self.wfile.write(json.dumps(json.loads((Path(__file__).resolve().parents[5] / "fixtures/wallet/balance.json").read_text()) if case.status == 200 else {"code": "balance_unavailable"}).encode())
 
         self.server = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
         self.thread = threading.Thread(target=self.server.serve_forever, daemon=True)
@@ -37,7 +37,7 @@ class CurlTest(unittest.TestCase):
         self.thread.join()
 
     def run_request(self, base=None):
-        return subprocess.run(["bash", str(Path(__file__).with_name("request.sh"))], env={**os.environ, "API_BASE_URL": base or f"http://127.0.0.1:{self.server.server_port}", "BUSINESS_ID": BUSINESS, "ACCESS_TOKEN": "offline-test-token"}, capture_output=True, text=True, timeout=20)
+        return subprocess.run(["bash", str(Path(__file__).resolve().parents[1] / "src" / "request.sh")], env={**os.environ, "API_BASE_URL": base or f"http://127.0.0.1:{self.server.server_port}", "BUSINESS_ID": BUSINESS, "ACCESS_TOKEN": "offline-test-token"}, capture_output=True, text=True, timeout=20)
 
     def test_success(self):
         result = self.run_request()

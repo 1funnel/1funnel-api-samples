@@ -7,7 +7,7 @@ Requires Node.js 24; no npm packages are needed. SQLite may print an experimenta
 ## Test without credentials
 
 ```bash
-node --test app.test.mjs
+node --test tests/app.test.mjs
 ```
 
 The test runs an HTTP API stub and signed webhook deliveries on loopback with a
@@ -30,7 +30,7 @@ export BUSINESS_ID='<issued-business-id>'
 export ACCESS_TOKEN='<issued-access-token>'
 export DB_PATH="$PWD/sms-status.sqlite"
 export WEBHOOK_KEYS_FILE="$PWD/keys.json"
-node app.mjs serve
+node src/app.mjs serve
 ```
 
 Create `request.json` with your authorized sender and test recipient:
@@ -62,11 +62,11 @@ windows; remove the old version when retired. Restart the receiver after changin
 this file. Restrict its permissions (`chmod 600 keys.json`); do not commit secrets.
 
 ```bash
-node app.mjs send order-1001 request.json
-node app.mjs inspect
-node app.mjs work
-node app.mjs inspect
-node app.mjs reconcile order-1001
+node src/app.mjs send order-1001 request.json
+node src/app.mjs inspect
+node src/app.mjs work
+node src/app.mjs inspect
+node src/app.mjs reconcile order-1001
 ```
 
 `send` checks HTTP 202, saves the message ID and records acceptance; it does not
@@ -105,3 +105,9 @@ limits. Replace the single-worker assumption with a reviewed claim/lease design 
 you scale workers. No external business side effects occur in this example; adding
 them requires its own idempotent transaction/outbox design. A saved REST snapshot is
 an observation at `checked_at`, not a guarantee of future status or final billing.
+
+## Configuration
+
+See `.env.example` for the required environment variables. The sample reads
+exported variables; it does not automatically load `.env` files. Keep real
+credentials and local databases outside source control.

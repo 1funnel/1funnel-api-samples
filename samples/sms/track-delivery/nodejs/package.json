@@ -1,0 +1,12 @@
+{
+  "name": "onefunnel-sms-track-delivery-sample",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "test": "node --test tests/app.test.mjs",
+    "start": "node src/app.mjs serve"
+  }
+}
