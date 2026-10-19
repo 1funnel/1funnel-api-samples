@@ -1,4 +1,4 @@
-# Contributing to 1Funnel API samples
+# Contributing to OneFunnel API samples
 
 Open an issue to discuss a substantial example or language addition. Small fixes
 can go directly to a pull request. Please keep one task per pull request.
