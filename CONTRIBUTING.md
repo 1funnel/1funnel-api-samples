@@ -45,3 +45,24 @@ a placeholder `.env.example`. Classify it as a request or application, keep
 root task/language navigation current, and run the catalog/planner tests. A new
 runtime job must feed the stable `samples-ci` gate; do not add a new required
 branch-check name. Shared fixtures must remain synthetic test data.
+
+## Choose a contribution route
+
+- For a sample bug, use the sample bug issue template; a small fix can be a direct
+  PR with a reproduction and offline test results.
+- For unclear portal or README instructions, use the documentation issue template
+  and include the page URL/path and proposed correction. The portal source is
+  private; maintainers apply approved portal changes there.
+- For a sample, language or complete tutorial, use the proposal template. Follow
+  [the tutorial authoring instructions](docs/tutorial-authoring.md) for a full
+  application walkthrough and place its draft in the sample's `tutorial.md`.
+- For developer-experience or API improvements, use the feature suggestion
+  template. Proposals do not change the published API contract or promise dates.
+- For account access and request-specific diagnostics, use portal Support.
+- For vulnerabilities, use private reporting as described in SECURITY.md.
+
+Maintainers may request changes before accepting contributions. Accepted samples
+and tutorial drafts do not automatically publish in the portal; maintainers
+prepare a reviewed portal PR and link its publication back to the contribution.
+Contributions use Apache-2.0; attribution can be requested in the PR.
+Keep discussion respectful and focused on developer needs and reproducible facts.

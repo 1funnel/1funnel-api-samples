@@ -1,0 +1,22 @@
+name: Developer experience or API feature suggestion
+description: Explain an integration need or improvement
+body:
+  - type: markdown
+    attributes:
+      value: This is a public proposal, not an account support ticket or delivery commitment. Do not include private data. Use the sample/tutorial template for a concrete new example.
+  - type: textarea
+    id: need
+    attributes:
+      label: Developer problem and intended outcome
+    validations:
+      required: true
+  - type: textarea
+    id: approach
+    attributes:
+      label: Proposed behavior and current workaround
+    validations:
+      required: true
+  - type: input
+    id: reference
+    attributes:
+      label: Relevant public guide or API operation
